@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>삼성지하수 - 지하수 개발 & 지열 공사 전문</title>
+    <title>삼성지하수 - 지하수 개발 & 사후복구 관리전문</title>
     <!-- Tailwind CSS (CDN) -->
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
@@ -35,30 +35,34 @@
                 <a href="#about" class="hover:text-white transition drop-shadow">회사소개</a>
                 <a href="#services" class="hover:text-white transition drop-shadow">사업분야</a>
                 <a href="#projects" class="hover:text-white transition drop-shadow">시공실적</a>
-                <a href="#board" class="hover:text-white transition text-blue-400 font-semibold drop-shadow">견적문의</a>
+                <a href="#business" class="hover:text-white transition drop-shadow">주요사업</a>
+                <a href="#board" class="hover:text-white transition drop-shadow">견적문의</a>
+                <a href="#tech" class="hover:text-white transition text-blue-400 font-semibold drop-shadow">기술라이브러리</a>
             </nav>
 
             <button id="menu-btn" class="md:hidden p-2 text-neutral-200 hover:text-white focus:outline-none" aria-label="메뉴 열기">
-                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg id="menu-icon" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3.75 9h16.5m-16.5 6h16.5" />
                 </svg>
             </button>
         </div>
 
-        <div id="mobile-menu" class="hidden md:hidden bg-neutral-950/90 backdrop-blur-md border-b border-neutral-800 px-6 py-6 space-y-4">
+        <div id="mobile-menu" class="hidden md:hidden bg-neutral-950/95 backdrop-blur-md border-b border-neutral-800 px-6 py-6 space-y-4">
             <a href="#about" class="mobile-link block text-neutral-300 hover:text-white">회사소개</a>
             <a href="#services" class="mobile-link block text-neutral-300 hover:text-white">사업분야</a>
             <a href="#projects" class="mobile-link block text-neutral-300 hover:text-white">시공실적</a>
-            <a href="#board" class="mobile-link block text-blue-400 font-semibold">견적문의</a>
+            <a href="#business" class="mobile-link block text-neutral-300 hover:text-white">주요사업</a>
+            <a href="#board" class="mobile-link block text-neutral-300 hover:text-white">견적문의</a>
+            <a href="#tech" class="mobile-link block text-blue-400 font-semibold">기술라이브러리</a>
         </div>
     </header>
 
     <!-- 2. Hero Section (비디오 배경) -->
     <section class="relative h-screen w-full flex items-center justify-center overflow-hidden">
-        <video autoPlay loop muted playsInline class="absolute inset-0 w-full h-full object-cover z-0 opacity-80 scale-105">
+        <video autoplay loop muted playsinline class="absolute inset-0 w-full h-full object-cover z-0 opacity-80 scale-105">
             <source src="hero-bg.mp4" type="video/mp4" />
         </video>
-        <div class="absolute inset-0 bg-black/30 z-10"></div>
+        <div class="absolute inset-0 bg-black/20 z-10"></div>
 
         <div class="relative z-20 max-w-7xl mx-auto px-6 sm:px-8 w-full text-left pt-12">
             <p class="text-blue-400 font-semibold tracking-widest text-xs sm:text-sm uppercase mb-4 drop-shadow">
@@ -69,71 +73,23 @@
                 <span class="text-blue-400">삼성지하수</span>가 만듭니다.
             </h1>
             <p class="text-base sm:text-lg text-neutral-100 max-w-xl font-normal leading-relaxed mb-10 drop-shadow">
-                30년 축적된 시공 경험과 최첨단 암반 천공 기술력으로<br class="hidden sm:inline" />
-                가정용, 농업용, 공업용 지하수부터 친환경 지열 공사까지 완벽하게 수행합니다.
+                30년간 축적된 시공 경험과 최첨단 암반 천공 기술을 바탕으로<br class="hidden sm:inline" />
+                가정용, 농업용, 공업용 지하수 공사를 완벽하게 수행합니다.
             </p>
             
             <div class="flex flex-col sm:flex-row gap-4">
                 <a href="#board" class="bg-blue-600 hover:bg-blue-500 text-white font-medium px-8 py-3.5 rounded-lg transition duration-200 text-center text-sm shadow-lg">
                     온라인 견적 문의
                 </a>
-                <a href="https://open.kakao.com/o/본인_오픈채팅_주소" target="_blank" class="bg-[#FEE500] hover:bg-[#FADA0A] text-[#191919] font-semibold px-8 py-3.5 rounded-lg transition duration-200 text-center text-sm shadow-lg flex items-center justify-center gap-2">
-                    <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M12 3c-4.97 0-9 3.185-9 7.115 0 2.557 1.707 4.8 4.27 6.054-.188.702-.682 2.545-.78 2.94-.122.493.18.487.38.354.157-.105 2.515-1.708 3.535-2.4 1.83.255 2.067.255 1.595.255 4.97 0 9-3.185 9-7.115S16.97 3 12 3z"/></svg>
-                    카카오톡 실시간 상담
+                <a href="#services" class="border border-white/30 hover:border-white/60 bg-black/30 hover:bg-black/60 text-white font-medium px-8 py-3.5 rounded-lg transition duration-200 text-center text-sm backdrop-blur-sm">
+                    사업 분야 보기
                 </a>
             </div>
         </div>
     </section>
 
-    <!-- 3. About Section (회사소개) -->
-    <section id="about" class="relative py-28 bg-cover bg-center bg-fixed border-t border-neutral-800" style="background-image: url('https://images.unsplash.com/photo-1541888946425-d0fbb186a5b3?auto=format&fit=crop&w=1920&q=80');">
-        <div class="absolute inset-0 bg-black/40"></div>
-        <div class="relative z-10 max-w-7xl mx-auto px-6 sm:px-8">
-            <div class="grid md:grid-cols-2 gap-12 items-center">
-                <div class="bg-black/50 p-6 rounded-2xl border border-white/10 backdrop-blur-xs">
-                    <span class="text-blue-400 text-xs font-semibold tracking-widest uppercase block mb-2 drop-shadow">About Us</span>
-                    <h2 class="text-3xl sm:text-4xl font-bold text-white tracking-tight mb-6 drop-shadow-md">
-                        신뢰와 기술력으로 보답하는<br />
-                        지하수 전문 기업
-                    </h2>
-                    <p class="text-neutral-100 text-sm leading-relaxed mb-6 font-normal drop-shadow">
-                        삼성지하수는 풍부한 현장 경험과 최신 천공 장비를 바탕으로 최적의 수자원을 개발합니다. 
-                        단순한 구멍을 뚫는 작업을 넘어, 철저한 지질 조사와 영향 평가를 통해 지속 가능한 수자원 이용 환경을 약속드립니다.
-                    </p>
-                    <div class="grid grid-cols-2 gap-4 pt-4 border-t border-white/20">
-                        <div>
-                            <span class="text-2xl font-bold text-blue-400 drop-shadow">30+년</span>
-                            <p class="text-xs text-neutral-200 mt-1 drop-shadow">시공 축적 경력</p>
-                        </div>
-                        <div>
-                            <span class="text-2xl font-bold text-blue-400 drop-shadow">100%</span>
-                            <p class="text-xs text-neutral-200 mt-1 drop-shadow">사후관리 보장</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="bg-black/70 border border-white/10 rounded-2xl p-8 backdrop-blur-md flex flex-col justify-center min-h-[280px]">
-                    <h3 class="text-xl font-semibold text-white mb-4">핵심 보유 기술</h3>
-                    <ul class="space-y-3 text-sm text-neutral-200">
-                        <li class="flex items-center gap-3">
-                            <span class="text-blue-400 font-bold">✓</span> 대형 에어 컴프레셔 및 첨단 암반 천공 장비
-                        </li>
-                        <li class="flex items-center gap-3">
-                            <span class="text-blue-400 font-bold">✓</span> 수문 조사 및 수질 정밀 분석 시스템
-                        </li>
-                        <li class="flex items-center gap-3">
-                            <span class="text-blue-400 font-bold">✓</span> 친환경 지열 수평/수직 열교환기 시공
-                        </li>
-                        <li class="flex items-center gap-3">
-                            <span class="text-blue-400 font-bold">✓</span> 고성능 수중펌프 설치 및 에어징(청소)
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- 4. Key Services (사업 분야) -->
-    <section id="services" class="py-24 bg-neutral-950 border-t border-neutral-900">
+    <!-- 3. Key Services (사업 분야) -->
+    <section id="services" class="py-24 bg-black border-t border-neutral-900">
         <div class="max-w-7xl mx-auto px-6 sm:px-8">
             <div class="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
                 <div>
@@ -146,7 +102,7 @@
             </div>
 
             <div class="grid md:grid-cols-3 gap-6">
-                <div class="p-8 rounded-xl bg-black border border-neutral-800 hover:border-blue-500/50 transition duration-300">
+                <div class="p-8 rounded-xl bg-neutral-950 border border-neutral-800 hover:border-blue-500/50 transition duration-300">
                     <span class="text-blue-500 text-xs font-mono font-semibold block mb-4">01</span>
                     <h3 class="text-xl font-semibold text-white mb-3">소형 · 대형 암반 지하수</h3>
                     <p class="text-neutral-400 text-sm leading-relaxed">
@@ -154,26 +110,26 @@
                     </p>
                 </div>
 
-                <div class="p-8 rounded-xl bg-black border border-neutral-800 hover:border-blue-500/50 transition duration-300">
+                <div class="p-8 rounded-xl bg-neutral-950 border border-neutral-800 hover:border-blue-500/50 transition duration-300">
                     <span class="text-blue-500 text-xs font-mono font-semibold block mb-4">02</span>
-                    <h3 class="text-xl font-semibold text-white mb-3">지열 냉난방 시스템</h3>
+                    <h3 class="text-xl font-semibold text-white mb-3">수중모터교체</h3>
                     <p class="text-neutral-400 text-sm leading-relaxed">
-                        지중 열교환기 천공 및 시공을 통해 에너지 비용을 절감하는 친환경 지열 시스템을 공급합니다.
+                        수중모터 펌프 신설 및 교체, 인버터 펌프 설치, 모터 제어반(컨트롤박스) 수리합니다. 
                     </p>
                 </div>
 
-                <div class="p-8 rounded-xl bg-black border border-neutral-800 hover:border-blue-500/50 transition duration-300">
+                <div class="p-8 rounded-xl bg-neutral-950 border border-neutral-800 hover:border-blue-500/50 transition duration-300">
                     <span class="text-blue-500 text-xs font-mono font-semibold block mb-4">03</span>
                     <h3 class="text-xl font-semibold text-white mb-3">영향조사 및 사후관리</h3>
                     <p class="text-neutral-400 text-sm leading-relaxed">
-                        지하수 영향조사 작성, 수중펌프 교체, 에어징(청소) 작업 및 폐공 원상복구를 철저히 진행합니다.
+                        지하수 영향조사 작성, 에어징(청소) 작업 및 폐공 원상복구를 철저히 진행합니다.
                     </p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- 5. Projects Section (시공실적) -->
+    <!-- 4. Projects Section (시공실적) -->
     <section id="projects" class="relative py-28 bg-cover bg-center bg-fixed border-t border-neutral-800" style="background-image: url('https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=1920&q=80');">
         <div class="absolute inset-0 bg-black/40"></div>
         <div class="relative z-10 max-w-7xl mx-auto px-6 sm:px-8">
@@ -193,16 +149,103 @@
                     <p class="text-xs text-neutral-300">일일 200톤 규모 수량 확보 및 영향평가 완료</p>
                 </div>
                 <div class="bg-black/70 border border-white/10 backdrop-blur-md rounded-xl p-6">
-                    <span class="text-xs text-blue-400 font-mono">지열 시스템</span>
-                    <h4 class="text-lg font-semibold text-white mt-1 mb-2">신축 전원주택 지열 냉난방 공사</h4>
-                    <p class="text-xs text-neutral-300">지중열교환기 4공 천공 및 배관 연결 완공</p>
+                    <span class="text-xs text-blue-400 font-mono">지하수 사후복구 시스템</span>
+                    <h4 class="text-lg font-semibold text-white mt-1 mb-2">신축 전원주택 지하수 관로 공사</h4>
+                    <p class="text-xs text-neutral-300">수증펌프 배관 연결 및 수리</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- 6. 견적문의 게시판 섹션 -->
-    <section id="board" class="py-24 bg-neutral-950 border-t border-neutral-900">
+    <!-- 4.5. Business Area (주요사업 - 시공실적 다음 순서 추가) -->
+    <section id="business" class="py-28 bg-neutral-950 border-t border-neutral-900">
+        <div class="max-w-7xl mx-auto px-6 sm:px-8">
+            <div class="mb-16">
+                <span class="text-blue-500 text-xs font-semibold tracking-widest uppercase block mb-2">Business Area</span>
+                <h2 class="text-3xl sm:text-4xl font-bold text-white tracking-tight">주요 사업</h2>
+                <p class="text-neutral-400 text-sm mt-3 max-w-2xl font-light leading-relaxed">
+                    삼성지하수는 전문 기술력과 풍부한 시공 노하우를 바탕으로 지하수 개발·굴착부터 준공, 폐공 처리, 사후 관리에 이르기까지 전 과정을 책임집니다.
+                </p>
+            </div>
+
+            <div class="grid lg:grid-cols-3 gap-8">
+                <!-- 주요사업 1 -->
+                <div class="bg-black border border-neutral-800 rounded-2xl p-8 hover:border-blue-500/50 transition duration-300 flex flex-col justify-between">
+                    <div>
+                        <div class="w-12 h-12 bg-blue-600/10 border border-blue-500/30 rounded-xl flex items-center justify-center mb-6">
+                            <svg class="w-6 h-6 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L5.59 15.12a2 2 0 01-1.022-.547l-.238-.238a2 2 0 010-2.828l.238-.238a2 2 0 011.022-.547l2.387-.477a6 6 0 003.86-.517l.318-.158a6 6 0 013.86-.517l2.387.477a2 2 0 011.022.547l.238.238a2 2 0 010 2.828l-.238.238z" />
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 3v12" />
+                            </svg>
+                        </div>
+                        <span class="text-xs font-mono text-blue-400 uppercase tracking-wider block mb-2">01. Development</span>
+                        <h3 class="text-2xl font-bold text-white mb-3">지하수 개발 및 이용</h3>
+                        <p class="text-neutral-400 text-sm leading-relaxed mb-6 font-light">
+                            고성능 장비와 축적된 기술력으로 생활용수, 농업용수, 공업용수는 물론 관공서 및 군 부대 규격에 맞춘 최적의 대수층 관정을 정밀 천공합니다.
+                        </p>
+                    </div>
+                    <div class="border-t border-neutral-900 pt-4">
+                        <span class="text-xs font-semibold text-neutral-300 block mb-2">대표 실적 위치</span>
+                        <ul class="text-xs text-neutral-500 space-y-1">
+                            <li class="flex items-center gap-1.5"><span class="text-blue-500">•</span> 강원도 홍천군 서면 동막리</li>
+                            <li class="flex items-center gap-1.5"><span class="text-blue-500">•</span> 강원도 춘천시 남면 발산리</li>
+                            <li class="flex items-center gap-1.5"><span class="text-blue-500">•</span> 경기도 가평군 상면 임초리</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- 주요사업 2 -->
+                <div class="bg-black border border-neutral-800 rounded-2xl p-8 hover:border-blue-500/50 transition duration-300 flex flex-col justify-between">
+                    <div>
+                        <div class="w-12 h-12 bg-blue-600/10 border border-blue-500/30 rounded-xl flex items-center justify-center mb-6">
+                            <svg class="w-6 h-6 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                            </svg>
+                        </div>
+                        <span class="text-xs font-mono text-blue-400 uppercase tracking-wider block mb-2">02. Environmental Protection</span>
+                        <h3 class="text-2xl font-bold text-white mb-3">지하수 준공 및 오염방지</h3>
+                        <p class="text-neutral-400 text-sm leading-relaxed mb-6 font-light">
+                            지하수법 규정에 맞춰 상부 보호공, 벤토나이트/시멘트 그라우팅, 수위 측정관을 완벽 시공하여 상부 오염물 유입을 차단하고 법정 준공 절차를 대행합니다.
+                        </p>
+                    </div>
+                    <div class="border-t border-neutral-900 pt-4">
+                        <span class="text-xs font-semibold text-neutral-300 block mb-2">대표 실적 위치</span>
+                        <ul class="text-xs text-neutral-500 space-y-1">
+                            <li class="flex items-center gap-1.5"><span class="text-blue-500">•</span> 강원도 홍천군 서면 동막리 준공</li>
+                            <li class="flex items-center gap-1.5"><span class="text-blue-500">•</span> 경기도 가평군 상면 임초리 준공</li>
+                            <li class="flex items-center gap-1.5"><span class="text-blue-500">•</span> 수질검사 및 영향조사서 작성 처리</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- 주요사업 3 -->
+                <div class="bg-black border border-neutral-800 rounded-2xl p-8 hover:border-blue-500/50 transition duration-300 flex flex-col justify-between">
+                    <div>
+                        <div class="w-12 h-12 bg-blue-600/10 border border-blue-500/30 rounded-xl flex items-center justify-center mb-6">
+                            <svg class="w-6 h-6 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
+                            </svg>
+                        </div>
+                        <span class="text-xs font-mono text-blue-400 uppercase tracking-wider block mb-2">03. Abandonment & Repair</span>
+                        <h3 class="text-2xl font-bold text-white mb-3">지하수 폐공 및 원상복구</h3>
+                        <p class="text-neutral-400 text-sm leading-relaxed mb-6 font-light">
+                            사용이 중단되거나 불용 처리된 관정을 규정 투입재와 완벽 충전 공법으로 마감하여 수질 오염을 예방하고 군부대 및 지자체 표준 폐공 공사를 집행합니다.
+                        </p>
+                    </div>
+                    <div class="border-t border-neutral-900 pt-4">
+                        <span class="text-xs font-semibold text-neutral-300 block mb-2">대표 실적 위치</span>
+                        <ul class="text-xs text-neutral-500 space-y-1">
+                            <li class="flex items-center gap-1.5"><span class="text-blue-500">•</span> 제2군단 직할부대 심정 폐공 (재사용 003호 등)</li>
+                            <li class="flex items-center gap-1.5"><span class="text-blue-500">•</span> 강원도 화천군 및 춘천시 일대 군부대 폐공</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. 견적문의 게시판 섹션 -->
+    <section id="board" class="py-24 bg-black border-t border-neutral-900">
         <div class="max-w-7xl mx-auto px-6 sm:px-8">
             <div class="flex flex-col sm:flex-row sm:items-center justify-between mb-10 gap-4">
                 <div>
@@ -215,7 +258,7 @@
                 </button>
             </div>
 
-            <div class="bg-black border border-neutral-800 rounded-xl overflow-hidden shadow-2xl">
+            <div class="bg-neutral-950 border border-neutral-800 rounded-xl overflow-hidden shadow-2xl">
                 <div class="overflow-x-auto">
                     <table class="w-full text-left text-xs sm:text-sm text-neutral-300">
                         <thead class="bg-neutral-900/80 text-neutral-400 uppercase font-medium border-b border-neutral-800">
@@ -248,23 +291,9 @@
                             <tr class="hover:bg-neutral-900/40 transition">
                                 <td class="py-4 px-4 text-center text-neutral-500">123</td>
                                 <td class="py-4 px-6 text-white font-normal">농업용 관정 견적서 요청</td>
-                                <td class="py-4 px-4 text-center text-neutral-400">홍금보</td>
+                                <td class="py-4 px-4 text-center text-neutral-400">홍인화</td>
                                 <td class="py-4 px-4 text-center text-neutral-500">2026/01/15</td>
                                 <td class="py-4 px-4 text-center text-neutral-500">2</td>
-                            </tr>
-                            <tr class="hover:bg-neutral-900/40 transition">
-                                <td class="py-4 px-4 text-center text-neutral-500">122</td>
-                                <td class="py-4 px-6 text-white font-normal">80m이상 지하수개발 공사 비용 문의</td>
-                                <td class="py-4 px-4 text-center text-neutral-400">조영범</td>
-                                <td class="py-4 px-4 text-center text-neutral-500">2026/01/05</td>
-                                <td class="py-4 px-4 text-center text-neutral-500">1</td>
-                            </tr>
-                            <tr class="hover:bg-neutral-900/40 transition">
-                                <td class="py-4 px-4 text-center text-neutral-500">121</td>
-                                <td class="py-4 px-6 text-white font-normal">가평읍 전원주택 지하수 관정 견적문의</td>
-                                <td class="py-4 px-4 text-center text-neutral-400">한지민</td>
-                                <td class="py-4 px-4 text-center text-neutral-500">2025/11/26</td>
-                                <td class="py-4 px-4 text-center text-neutral-500">3</td>
                             </tr>
                         </tbody>
                     </table>
@@ -273,10 +302,124 @@
         </div>
     </section>
 
+    <!-- 6. 기술 라이브러리 섹션 (Tech Library) -->
+    <section id="tech" class="py-28 bg-black border-t border-neutral-900">
+        <div class="max-w-7xl mx-auto px-6 sm:px-8">
+            
+            <div class="text-center mb-20">
+                <p class="text-blue-500 text-xs font-semibold tracking-widest uppercase mb-3">Tech Library</p>
+                <h2 class="text-2xl sm:text-4xl font-bold text-white tracking-tight leading-tight">
+                    지하수 개발 및 구조적 안정성을 위한 설계 & 시공 기술
+                </h2>
+                <div class="w-12 h-1 bg-blue-600 mx-auto mt-6 rounded-full"></div>
+            </div>
+
+            <div class="space-y-12">
+
+                <!-- 기술 카드 1: 지하수 수문 조사 -->
+                <div class="bg-neutral-900/90 border border-neutral-800 rounded-2xl p-6 sm:p-10 shadow-2xl flex flex-col md:flex-row gap-8 items-center">
+                    <div class="w-full md:w-5/12 flex-shrink-0">
+                        <div class="overflow-hidden rounded-xl border border-neutral-800 bg-black">
+                            <img src="2.jpg" onerror="this.src='2.jpeg'" alt="지하수 생성 원리" loading="lazy" class="w-full h-64 sm:h-72 object-cover hover:scale-105 transition duration-500" />
+                        </div>
+                        <p class="text-xs text-neutral-400 text-center mt-3 font-mono">지하수 생성 및 순환 체계도</p>
+                    </div>
+                    <div class="w-full md:w-7/12">
+                        <span class="text-xs font-mono font-semibold text-blue-400 uppercase tracking-wider bg-blue-500/10 px-3 py-1 rounded-full border border-blue-500/20 mb-4 inline-block">TECH 01</span>
+                        <h3 class="text-2xl font-bold text-white mb-4">지하수 수문 조사 및 수자원 형성 분석</h3>
+                        <p class="text-neutral-300 text-sm leading-relaxed mb-6 font-light">
+                            강수가 지표면으로 스며들어 비포화대와 포화대를 거쳐 불투수성 암반층 위에 고이는 정밀 수문 순환 매커니즘을 분석합니다. 정확한 지질 분석으로 최적의 대수층 관정 위치를 선별합니다.
+                        </p>
+                        <ul class="space-y-2 text-xs text-neutral-400 border-t border-neutral-800 pt-4">
+                            <li class="flex items-center gap-2"><span class="text-blue-500">•</span> 비포화대(통기대) 및 포화대 수위 경계 조사</li>
+                            <li class="flex items-center gap-2"><span class="text-blue-500">•</span> 암반 대수층 파쇄대 수량 파악으로 안정적 수자원 확보</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- 기술 카드 2: 관측정 구조 설계 -->
+                <div class="bg-neutral-900/90 border border-neutral-800 rounded-2xl p-6 sm:p-10 shadow-2xl flex flex-col md:flex-row gap-8 items-center">
+                    <div class="w-full md:w-5/12 flex-shrink-0">
+                        <div class="overflow-hidden rounded-xl border border-neutral-800 bg-white/95 p-2">
+                            <img src="3.jpg" onerror="this.src='3.jpeg'" alt="관측정 개념도" loading="lazy" class="w-full h-64 sm:h-72 object-contain hover:scale-105 transition duration-500" />
+                        </div>
+                        <p class="text-xs text-neutral-400 text-center mt-3 font-mono">지하수법 시행규칙 별표 8 표준 구조도</p>
+                    </div>
+                    <div class="w-full md:w-7/12">
+                        <span class="text-xs font-mono font-semibold text-blue-400 uppercase tracking-wider bg-blue-500/10 px-3 py-1 rounded-full border border-blue-500/20 mb-4 inline-block">TECH 02</span>
+                        <h3 class="text-2xl font-bold text-white mb-4">관측정 및 암반관정 표준 공학 설계</h3>
+                        <p class="text-neutral-300 text-sm leading-relaxed mb-6 font-light">
+                            지하수 오염 방지 및 수질 보존을 위한 규격화된 그라우팅 시공을 적용합니다. 케이싱 구간, 스크린 구간, 벤토나이트/시멘트 그라우팅으로 상부 오염 물질의 유입을 철저히 차단합니다.
+                        </p>
+                        <ul class="space-y-2 text-xs text-neutral-400 border-t border-neutral-800 pt-4">
+                            <li class="flex items-center gap-2"><span class="text-blue-500">•</span> 시멘트 및 벤토나이트 300mm 이상 이중 상부 차단 그라우팅</li>
+                            <li class="flex items-center gap-2"><span class="text-blue-500">•</span> 내식성이 뛰어난 스테인리스 스틸 / 스크린 파이프 시공</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- 기술 카드 3: 천공 및 용접 기술 -->
+                <div class="bg-neutral-900/90 border border-neutral-800 rounded-2xl p-6 sm:p-10 shadow-2xl flex flex-col md:flex-row gap-8 items-center">
+                    <div class="w-full md:w-5/12 flex-shrink-0 grid grid-cols-3 gap-2">
+                        <div class="overflow-hidden rounded-xl border border-neutral-800 bg-black">
+                            <img src="4.jpg" onerror="this.src='4.jpeg'" alt="천공 리그 장비" loading="lazy" class="w-full h-44 sm:h-52 object-cover hover:scale-110 transition duration-500" />
+                            <p class="text-[10px] text-neutral-400 text-center py-1 bg-neutral-950">천공 리그</p>
+                        </div>
+                        <div class="overflow-hidden rounded-xl border border-neutral-800 bg-black">
+                            <img src="5.jpg" onerror="this.src='5.jpeg'" alt="케이싱 용접 작업" loading="lazy" class="w-full h-44 sm:h-52 object-cover hover:scale-110 transition duration-500" />
+                            <p class="text-[10px] text-neutral-400 text-center py-1 bg-neutral-950">강관 용접</p>
+                        </div>
+                        <div class="overflow-hidden rounded-xl border border-neutral-800 bg-black">
+                            <img src="8.jpg" onerror="this.src='8.jpeg'" alt="심도 천공 현장" loading="lazy" class="w-full h-44 sm:h-52 object-cover hover:scale-110 transition duration-500" />
+                            <p class="text-[10px] text-neutral-400 text-center py-1 bg-neutral-950">심도 천공</p>
+                        </div>
+                    </div>
+                    <div class="w-full md:w-7/12">
+                        <span class="text-xs font-mono font-semibold text-blue-400 uppercase tracking-wider bg-blue-500/10 px-3 py-1 rounded-full border border-blue-500/20 mb-4 inline-block">TECH 03</span>
+                        <h3 class="text-2xl font-bold text-white mb-4">대형 암반 천공 장비 및 케이싱 정밀 결합 기술</h3>
+                        <p class="text-neutral-300 text-sm leading-relaxed mb-6 font-light">
+                            고압 에어 컴프레셔와 유압 타격식 천공 리그 장비를 활용하여 무너짐 없는 완벽한 수직 심도 굴착을 수행합니다. 토사층 붕괴 방지를 위해 현장에서 고강도 강관 케이싱을 정밀 밀착 용접 결합합니다.
+                        </p>
+                        <ul class="space-y-2 text-xs text-neutral-400 border-t border-neutral-800 pt-4">
+                            <li class="flex items-center gap-2"><span class="text-blue-500">•</span> 고압 에어 해머 기법을 통한 암반층 굴착</li>
+                            <li class="flex items-center gap-2"><span class="text-blue-500">•</span> 수밀성 확보를 위한 현장 특수 강관 직용접 기술</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- 기술 카드 4: 상부 보호통 시설 -->
+                <div class="bg-neutral-900/90 border border-neutral-800 rounded-2xl p-6 sm:p-10 shadow-2xl flex flex-col md:flex-row gap-8 items-center">
+                    <div class="w-full md:w-5/12 flex-shrink-0 grid grid-cols-2 gap-3">
+                        <div class="overflow-hidden rounded-xl border border-neutral-800 bg-black">
+                            <img src="6.jpg" onerror="this.src='6.jpeg'" alt="상부보호통 내부 제어반" loading="lazy" class="w-full h-48 sm:h-56 object-cover hover:scale-105 transition duration-500" />
+                            <p class="text-[10px] text-neutral-400 text-center py-1 bg-neutral-950">내부 제어반/계량기</p>
+                        </div>
+                        <div class="overflow-hidden rounded-xl border border-neutral-800 bg-black">
+                            <img src="7.jpg" onerror="this.src='7.jpeg'" alt="상부보호통 외부 완공" loading="lazy" class="w-full h-48 sm:h-56 object-cover hover:scale-105 transition duration-500" />
+                            <p class="text-[10px] text-neutral-400 text-center py-1 bg-neutral-950">외부 밀폐 보호통</p>
+                        </div>
+                    </div>
+                    <div class="w-full md:w-7/12">
+                        <span class="text-xs font-mono font-semibold text-blue-400 uppercase tracking-wider bg-blue-500/10 px-3 py-1 rounded-full border border-blue-500/20 mb-4 inline-block">TECH 04</span>
+                        <h3 class="text-2xl font-bold text-white mb-4">밀폐형 상부 보호 시설 및 지능형 컨트롤 시스템</h3>
+                        <p class="text-neutral-300 text-sm leading-relaxed mb-6 font-light">
+                            지상 노출로 인한 동파와 외부 오염물 유입을 완벽 차단하는 밀폐 콘크리트 보호통을 설치합니다. 내부에는 자동 수위 제어 전원반(컨트롤 박스), 디지털 적산 수도계량기, 역류방지 밸브 시스템이 내장되어 최적의 유지관리를 제공합니다.
+                        </p>
+                        <ul class="space-y-2 text-xs text-neutral-400 border-t border-neutral-800 pt-4">
+                            <li class="flex items-center gap-2"><span class="text-blue-500">•</span> 지하수 이용시설 안내문 명판 표준 부착 및 준공 승인</li>
+                            <li class="flex items-center gap-2"><span class="text-blue-500">•</span> 동파 방지 차단 구조 및 안전 수중 펌프 제어 장치</li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
     <!-- 견적문의 작성 모달 팝업 창 -->
     <div id="modal" class="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4">
         <div class="bg-neutral-900 border border-neutral-800 w-full max-w-lg rounded-2xl p-6 sm:p-8 shadow-2xl relative">
-            <button onclick="toggleModal()" class="absolute top-5 right-5 text-neutral-400 hover:text-white">
+            <button onclick="toggleModal()" class="absolute top-5 right-5 text-neutral-400 hover:text-white" aria-label="모달 닫기">
                 <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
             </button>
             <h3 class="text-xl font-bold text-white mb-2">지하수 개발 견적 문의</h3>
@@ -338,22 +481,24 @@
         </div>
     </footer>
 
-    <!-- 우측 하단 고정 카카오톡 상담 버튼 -->
-    <a href="https://open.kakao.com/o/본인_오픈채팅_주소" target="_blank" rel="noopener noreferrer" 
-       class="fixed bottom-20 right-6 z-50 bg-[#FEE500] hover:bg-[#FADA0A] text-[#191919] font-bold py-2.5 px-4 rounded-full shadow-2xl flex items-center gap-2 border border-yellow-300 text-xs transition transform hover:scale-105">
-        <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M12 3c-4.97 0-9 3.185-9 7.115 0 2.557 1.707 4.8 4.27 6.054-.188.702-.682 2.545-.78 2.94-.122.493.18.487.38.354.157-.105 2.515-1.708 3.535-2.4 1.83.255 2.067.255 1.595.255 4.97 0 9-3.185 9-7.115S16.97 3 12 3z"/></svg>
-        카톡 상담
-    </a>
+    <!-- 우측 하단 고정 플로팅 버튼 영역 -->
+    <div class="fixed bottom-6 right-6 z-50 flex flex-col gap-3 items-end">
+        <!-- 카카오톡 상담 버튼 -->
+        <a href="https://open.kakao.com/o/slyDCmHi" target="_blank" rel="noopener noreferrer" 
+           class="bg-[#FEE500] hover:bg-[#FADA0A] text-[#191919] font-bold py-2.5 px-4 rounded-full shadow-2xl flex items-center gap-2 border border-yellow-300 text-xs transition transform hover:scale-105">
+            <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M12 3c-4.97 0-9 3.185-9 7.115 0 2.557 1.707 4.8 4.27 6.054-.188.702-.682 2.545-.78 2.94-.122.493.18.487.38.354.157-.105 2.515-1.708 3.535-2.4 1.83.255 2.067.255 1.595.255 4.97 0 9-3.185 9-7.115S16.97 3 12 3z"/></svg>
+            카톡 상담
+        </a>
 
-    <!-- 우측 하단 고정 모바일 전화 연결 버튼 -->
-    <a href="tel:010-8823-3292" class="md:hidden fixed bottom-6 right-6 z-50 bg-blue-600 hover:bg-blue-500 text-white font-semibold py-3 px-5 rounded-full shadow-lg flex items-center gap-2 border border-blue-400 text-sm">
-        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
-        </svg>
-        전화 연결
-    </a>
+        <!-- 모바일 전용 전화 연결 버튼 -->
+        <a href="tel:010-8823-3292" class="md:hidden bg-blue-600 hover:bg-blue-500 text-white font-semibold py-2.5 px-4 rounded-full shadow-lg flex items-center gap-2 border border-blue-400 text-xs transition transform hover:scale-105">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+            </svg>
+            전화 연결
+        </a>
+    </div>
 
-    <!-- 모달 팝업 제어 스크립트 -->
     <script>
         const menuBtn = document.getElementById('menu-btn');
         const mobileMenu = document.getElementById('mobile-menu');
